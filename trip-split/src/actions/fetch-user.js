@@ -1,5 +1,5 @@
 import axiosWithAuth from '../components/Login/withAuth';
-import { dburl } from './index'; 
+import { dbUrl } from './index'; 
 
 export const FETCH_USER_START = 'FETCH_USER_START';
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
