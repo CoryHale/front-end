@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { dbUrl } from './index'; 
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: `${dbUrl}/api`,
   headers: {
     authorization: localStorage.getItem('token'),
   }

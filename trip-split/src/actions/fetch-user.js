@@ -1,4 +1,5 @@
 import axiosWithAuth from '../components/Login/withAuth';
+import { dburl } from './index'; 
 
 export const FETCH_USER_START = 'FETCH_USER_START';
 export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
@@ -7,7 +8,7 @@ export const FETCH_USER_FAILED = 'FETCH_USER_FAILED';
 export const fetchUser = id => dispatch => {
   dispatch({ type: FETCH_USER_START });
   axiosWithAuth()
-    .get(`http://localhost:5000/api/users/${id}/`)
+    .get(`${dbUrl}/api/users/${id}/`)
     .then(res => {
       dispatch({ 
         type: FETCH_USER_SUCCESS, 

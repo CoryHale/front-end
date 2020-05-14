@@ -1,4 +1,5 @@
 import axiosWithAuth from '../components/Login/withAuth';
+import { dbUrl } from './index';
 
 export const FETCH_TRIPS_START = 'FETCH_TRIPS_START';
 export const FETCH_TRIPS_SUCCESS = 'FETCH_TRIPS_SUCCESS';
@@ -7,7 +8,7 @@ export const FETCH_TRIPS_FAILED = 'FETCH_TRIPS_FAILED';
 export const fetchTrips = id => dispatch => {
   dispatch({ type: FETCH_TRIPS_START });
   axiosWithAuth()
-    .get(`http://localhost:5000/api/users/${id}/trips`)
+    .get(`${dbUrl}/api/users/${id}/trips`)
     .then(res => {
       dispatch({ 
         type: FETCH_TRIPS_SUCCESS, 

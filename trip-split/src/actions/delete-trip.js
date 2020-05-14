@@ -1,4 +1,5 @@
 import axiosWithAuth from '../components/Login/withAuth';
+import { dbUrl } from './index';
 
 export const DELETE_TRIP_START = 'DELETE_TRIP_START';
 export const DELETE_TRIP_SUCCESS = 'DELETE_TRIP_SUCCESS';
@@ -8,7 +9,7 @@ export const deleteTrip = trip_id => dispatch => {
   console.log('start')
   dispatch({ type: DELETE_TRIP_START });
   axiosWithAuth()
-    .delete(`http://localhost:5000/api/trips/${trip_id}`)
+    .delete(`${dbUrl}/api/trips/${trip_id}`)
     .then(res => {
       console.log(res.data)
       dispatch({ 
