@@ -47,6 +47,6 @@ export {
   fetchUser
 } from './fetch-user'
 
-const dbUrl = 'url'; // Change URL
+const dbUrl = 'https://trip-split-backend.herokuapp.com';
 
 export { dbUrl };
